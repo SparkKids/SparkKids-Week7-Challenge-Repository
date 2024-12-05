@@ -5,6 +5,7 @@ const generateMarkdown = require('./utils/generateMarkdown');
 
 
 // TODO: Create an array of questions for user input
+// 11/30/2024 SGray - Done
 
 const questions = ["Please enter your project title:",
     "Please enter a description for your project:",
@@ -20,18 +21,26 @@ const licenses = ["Apache 2.0 License", "BSD 2-Clause License", "BSD 3-Clause Li
     "GNU GPL v2", "GNU GPL v3", "The MIT License", "Mozilla Public License 2.0"];
 
 // TODO: Create a function to write README file
+// 12/04/2024 SGray - Done
 async function writeToFile(fileName, data) {
     try {
         await fs.writeFile(fileName, data, (err) => {
             if (err) throw err;
         });
-        console.log('Success!');
     } catch (err) {
         console.error(err);
     }
 }
 // TODO: Create a function to initialize app
-
+//
+// function init()
+// Description: Prompts the user for all the fields in README.md
+//  Then calls the functions to generate the markdown text. Finally,
+//  calls a function to write the markdown text to the README file.
+// Arguments:
+//  none
+// Return: none
+// 12/04/2024 SGray - Done
 async function init() {
     try {
         const answers = await inquirer.prompt([
@@ -89,51 +98,16 @@ async function init() {
                 name: 'email',
             }, 
         ]);
-        console.log("answers.license = " + answers.license);
-
-        const readmeContent = `
-# ${answers.title}
-
-## Table of Contents
-- [Description](#description)
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contributing](#contributing)
-- [Tests](#tests)
-- [Questions](#questions)
-
-## Description
-${answers.description || 'No description provided.'}
-
-## Installation
-${answers.installation || 'No installation instructions provided.'}
-
-## Usage
-${answers.usage || 'No usage information provided.'}
-
-## License
-${answers.license || 'No license information provided.'}
-
-## Contributing
-${answers.contributing || 'No contribution guidelines provided.'}
-
-## Tests
-${answers.tests || 'No tests provided.'}
-
-## Questions
-My GitHub Username: ${answers.github || 'Username not provided'}
-My GitHub Profile: https://github.com/${answers.github || 'Username not provided'}
-Feel free to contact me at ${answers.email || 'no@email.com'} if you have any questions about the project. You can find the GitHub repository at ${answers.github || 'https://github.com/'}.`;
-console.log("readmeContent = " + readmeContent);
+        //Generate the text for README.md
         var markdown = generateMarkdown(answers);
-        console.log("markdown = " + markdown);
-        console.log("writeToFile");
+        //Write the markdown text to a new README.md
         await writeToFile(readMeFile, markdown);
         console.log('README.md has been generated!');
     } catch (error) {
         console.error('An error occurred:', error);
     }
-}
+}//init()
 
+//Invoke the Inquirer prompts to gather user input and 
+//generate README.md
 init();

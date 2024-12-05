@@ -1,10 +1,18 @@
-//Array of licenses user chooses from.
+// The licenses array is used to lookup the index of the license
+// chosen by the user
 const licenses = ["Apache 2.0 License", "BSD 2-Clause License", "BSD 3-Clause License",
   "GNU GPL v2", "GNU GPL v3", "The MIT License", "Mozilla Public License 2.0"];
-
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-//10/19/2024 SGray - Done
+//
+// function renderLicenseBadge(pageIndex)
+// Description: Takes the users answer to "Please select your 
+// license:" and returns a link to the badge for the license
+// Arguments:
+//  pageIndex - The license chosen by the user. Used as the index 
+//    to badges[]
+// Return: badges[pageIndex] - The URL for the selected badge.
+// 12/05/2024 SGray - Done
 function renderLicenseBadge(pageIndex) {
   const badges = ["https://img.shields.io/badge/License-Apache_2.0-blue.svg",
     "https://img.shields.io/badge/License-BSD_2--Clause-orange.svg",
@@ -13,7 +21,7 @@ function renderLicenseBadge(pageIndex) {
     "https://img.shields.io/badge/License-GPLv3-blue.svg",
     "https://img.shields.io/badge/License-MIT-yellow.svg",
     "https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg"];
-  if (pageIndex == undefined) {
+ if (pageIndex == undefined) {
     //User did not select a license, return a blank string
     return "";
   } else {
@@ -23,7 +31,17 @@ function renderLicenseBadge(pageIndex) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-//10/19/2024 SGray - Done
+//
+// function renderLicenseLink(pageIndex)
+// Description: Takes the users answer to "Please select your 
+// license:" and returns a link to the text for the license
+// Arguments:
+//  pageIndex - The license chosen by the user. Used as the index 
+//    to licenselinks[]
+// Return: licenselinks[pageIndex] - The URL for the selected badges
+//    license text.
+// 12/05/2024 SGray - Done
+//
 function renderLicenseLink(pageIndex) {
   const licenselinks = ["https://opensource.org/licenses/Apache-2.0",
     "https://opensource.org/licenses/BSD-2-Clause",
@@ -40,33 +58,42 @@ function renderLicenseLink(pageIndex) {
   }
 }//function renderLicenseLink(license)
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(answers) {
+//
+// function generateMarkdown(data)
+// Description: Takes the passed in answers collected by init() and
+//  generates the markdown text to be written to the README file. Uses 
+//  templating to generate the markdown.
+// Arguments:
+//  data - The structure containing the user answers collected by inquirer
+//    in init()
+// Return: licenselinks[pageIndex] - The URL for the selected badges
+//    license text.
+// 12/05/2024 SGray - Done
+//
+function generateMarkdown(data) {
+  console.log("Tests " + data.tests);
   //All arrays will have the same index position. Save it so we only have 
   //to look it up once.
   var arraysIndex;
-  if (answers.license == undefined) {
+  if (data.license == undefined) {
     arraysIndex = undefined;
   } else {
-    arraysIndex = licenses.indexOf(answers.license);
+    arraysIndex = licenses.indexOf(data.license);
   }
   const licenseBadge = renderLicenseBadge(arraysIndex);
   const licenseLink = renderLicenseLink(arraysIndex);
+  
+  //Return the templated text
   return `
- 
+  [![${data.license}](${licenseBadge})](${licenseLink})
 
-  # ${answers.title}
 
-  ## License Badge
- [![${answers.license}](${licenseBadge})](${licenseLink})
+  # ${data.title} 
 
- ## Description
+  ## Description
 
-  ${answers.description} 
+  ${data.description} 
     
     
   ## Table of Contents 
@@ -80,34 +107,38 @@ function generateMarkdown(answers) {
       
   ## Installation
       
-  ${answers.installation} 
+  ${data.installation} 
   
   ## Usage
       
-  ${answers.usage}
+  ${data.usage}
       
       
   ## Contributing
 
-  ${answers.contributing}
+  ${data.contributing}
 
   ## Tests
 
-  ${answers.tests}
+  ${data.tests}
       
     
   ## License
 
-  [${answers.license}](${licenseLink})
+  [${data.license}](${licenseLink})
 
  
   ## Questions
-  My GitHub Username: ${answers.username || 'Username not provided'}
-  
-  [My GitHub Profile](https://github.com/${answers.username || 'Username not provided'})
 
-  Feel free to contact me at [${answers.email}](mailto:${answers.email}) if you have any questions about the project.
-  `;
+  [GitHub ${data.username}](https://github.com/${data.username})
+
+  [${data.email}](mailto:${data.email})
+
+
+
+    
+    
+  `
 }
-module.exports = generateMarkdown;
 
+module.exports = generateMarkdown;
