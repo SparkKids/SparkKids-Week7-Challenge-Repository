@@ -1,0 +1,23 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "Prompts user for inputs to generate a readme file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Steven C Gray",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "8.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "SparkKids"
+  },
+  "keywords": [
+    "Generate",
+    "ReadMe"
+  ],
+  "devDependencies": {}
+}

@@ -46,7 +46,7 @@ async function init() {
                     return true;
                 }
             },
-            /* {
+             {
                 type: 'input',
                 message: questions[1],
                 name: 'description',
@@ -70,14 +70,14 @@ async function init() {
                 type: 'input',
                 message: questions[5],
                 name: 'tests',
-            },*/
+            },
             {
                 type: 'rawlist',
                 name: 'license',
                 message: questions[6],
                 choices: [licenses[0], licenses[1], licenses[2], licenses[3], licenses[4],
                 licenses[5], licenses[6]],
-            },/*
+            },
             {
                 type: 'input',
                 message: questions[7],
@@ -87,7 +87,7 @@ async function init() {
                 type: 'input',
                 message: questions[8],
                 name: 'email',
-            }, */
+            }, 
         ]);
         console.log("answers.license = " + answers.license);
 
@@ -122,6 +122,8 @@ ${answers.contributing || 'No contribution guidelines provided.'}
 ${answers.tests || 'No tests provided.'}
 
 ## Questions
+My GitHub Username: ${answers.github || 'Username not provided'}
+My GitHub Profile: https://github.com/${answers.github || 'Username not provided'}
 Feel free to contact me at ${answers.email || 'no@email.com'} if you have any questions about the project. You can find the GitHub repository at ${answers.github || 'https://github.com/'}.`;
 console.log("readmeContent = " + readmeContent);
         var markdown = generateMarkdown(answers);

@@ -60,6 +60,7 @@ function generateMarkdown(answers) {
  
 
   # ${answers.title}
+
   ## License Badge
  [![${answers.license}](${licenseBadge})](${licenseLink})
 
@@ -101,11 +102,12 @@ function generateMarkdown(answers) {
 
  
   ## Questions
+  My GitHub Username: ${answers.username || 'Username not provided'}
+  
+  [My GitHub Profile](https://github.com/${answers.username || 'Username not provided'})
 
-  [GitHub ${answers.username}](https://github.com/${answers.username})
-
-  [${answers.email}](mailto:${answers.email})
-`;
+  Feel free to contact me at [${answers.email}](mailto:${answers.email}) if you have any questions about the project.
+  `;
 }
 module.exports = generateMarkdown;
 
