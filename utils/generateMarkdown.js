@@ -86,10 +86,9 @@ function generateMarkdown(data) {
   
   //Return the templated text
   return `
+  # ${data.title}
+
   [![${data.license}](${licenseBadge})](${licenseLink})
-
-
-  # ${data.title} 
 
   ## Description
 
