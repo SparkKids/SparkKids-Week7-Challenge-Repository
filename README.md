@@ -1,12 +1,9 @@
 
- 
-
   # 07 Node.js Challenge: Professional README Generator
 
-  ## License Badge
- [![The MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![The MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
- ## Description
+  ## Description
 
   This challenge prompts the user for input used to automatically generate a README file for the user's project. 
     
@@ -22,11 +19,11 @@
       
   ## Installation
       
-  Download the code from the github repository into into the root directory for your README generator, then enter the following commands from the command line: npx init, npm install 
+  Download the code from the github repository into into the root directory for your README generator.  From the Git Bash command line, cd to the projects root directory: "cd ~[Your projects root directory]/develop" Then enter the following commands from the command line: npx init followed by npm install. 
   
   ## Usage
       
-  In Git Bash command line, from the projects root directory enter: "node index.js"
+  From the Git Bash command line, cd to the projects root directory: "cd ~[Your projects root directory]/develop" then enter: "node index.js"
       
       
   ## Contributing
@@ -35,7 +32,7 @@
 
   ## Tests
 
-  No tests have been defined for the project. Defined tests are listed as one of the issues in git hub
+  No tests have been defined for the project. Defined tests are listed as one of the issues in git hub.
       
     
   ## License
@@ -44,9 +41,13 @@
 
  
   ## Questions
-  My GitHub Username: SparkKids
-  
-  [My GitHub Profile](https://github.com/SparkKids)
 
-  Feel free to contact me at [stevegray@granite-mtn.com](mailto:stevegray@granite-mtn.com) if you have any questions about the project.
+  [GitHub SparkKids](https://github.com/SparkKids)
+
+  [stevegray@granite-mtn.com](mailto:stevegray@granite-mtn.com)
+
+
+
+    
+    
   
