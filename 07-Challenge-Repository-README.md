@@ -25,6 +25,8 @@
       
   From the Git Bash command line, cd to the projects root directory: "cd ~[Your projects root directory]/develop" then enter: "node index.js"
 
+  [My Walkthrough Video](https://drive.google.com/file/d/1_W95uOoel_-y0UcktF10ac5CbQJyny5c/view)
+
   ![Start The README Generator](assets/images/Invoke-README-Generator.png)
 
   Then answer the prompts as they display on the command line.
