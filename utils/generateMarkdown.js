@@ -72,7 +72,6 @@ function renderLicenseLink(pageIndex) {
 // 12/05/2024 SGray - Done
 //
 function generateMarkdown(data) {
-  console.log("Tests " + data.tests);
   //All arrays will have the same index position. Save it so we only have 
   //to look it up once.
   var arraysIndex;
@@ -129,9 +128,11 @@ function generateMarkdown(data) {
  
   ## Questions
 
-  [GitHub ${data.username}](https://github.com/${data.username})
+  GitHub username: ${data.username}
 
-  [${data.email}](mailto:${data.email})
+  GitHub user profile: [GitHub ${data.username}](https://github.com/${data.username})
+
+  Contact: [${data.email}](mailto:${data.email})
 
 
 

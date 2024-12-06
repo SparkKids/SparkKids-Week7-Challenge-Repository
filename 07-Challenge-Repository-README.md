@@ -5,7 +5,7 @@
 
   ## Description
 
-  This challenge prompts the user for input used to automatically generate a README file for the user's project. 
+  This challenge prompts the user to answer questions about all the sections used in the README. The program then automatically generates a README file for the user's project. 
     
     
   ## Table of Contents 
@@ -24,6 +24,14 @@
   ## Usage
       
   From the Git Bash command line, cd to the projects root directory: "cd ~[Your projects root directory]/develop" then enter: "node index.js"
+
+  ![Start The README Generator](assets/images/Invoke-README-Generator.png)
+
+  Then answer the prompts as they display on the command line.
+
+  ![Answer the prompts](assets/images/README-Prompts-Answers.png)
+
+
       
       
   ## Contributing
@@ -42,11 +50,9 @@
  
   ## Questions
 
-  GitHub username: SparkKids
+  [GitHub SparkKids](https://github.com/SparkKids)
 
-  GitHub user profile: [GitHub SparkKids](https://github.com/SparkKids)
-
-  Contact: [stevegray@granite-mtn.com](mailto:stevegray@granite-mtn.com)
+  [stevegray@granite-mtn.com](mailto:stevegray@granite-mtn.com)
 
 
 
